@@ -8,4 +8,5 @@
   <Project Path="docker-compose.dcproj">
     <Build />
   </Project>
+  <Project Path="ToDo-backend.Tests/ToDo-backend.Tests.csproj" />
 </Solution>

@@ -3,7 +3,7 @@ name: Build & Deploy Backend (.NET) to VPS
 on:
   push:
     branches:
-      - development
+      - master
     tags:
       - 'v*'
 
@@ -80,8 +80,7 @@ jobs:
             cd ~/todo/backend-docker
             docker compose pull
             docker compose up -d
-            docker cp ~/todo/backend-docker/appsettings-temp.json ToDo-backend.Web.API:/app/appsettings.Preproduction.json
-            docker restart todo-backend.web.api-1
+            docker restart ToDoApp.Api
           EOF
 
         

@@ -20,6 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <InternalsVisibleTo Include="ToDo-backend.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="TaskTypes\Create\" />
     <Folder Include="TaskTypes\Get\" />
     <Folder Include="TaskTypes\Delete\" />
