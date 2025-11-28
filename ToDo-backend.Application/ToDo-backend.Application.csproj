@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <RootNamespace>ToDo_backend.Application</RootNamespace>
+    <AssemblyName>ToDo-backend.Application</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.0.0" />
+    <PackageReference Include="MediatR" Version="13.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.0" />
+    <PackageReference Include="Serilog" Version="4.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ToDo-backend.Domain\ToDo-backend.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="TaskTypes\Create\" />
+    <Folder Include="TaskTypes\Get\" />
+    <Folder Include="TaskTypes\Delete\" />
+    <Folder Include="TaskTypes\GetMyTaskTypes\" />
+    <Folder Include="TaskTypes\Update\" />
+    <Folder Include="ToDoTask\Create\" />
+    <Folder Include="ToDoTask\Get\" />
+    <Folder Include="ToDoTask\Delete\" />
+    <Folder Include="ToDoTask\GetMyToDoTask\" />
+    <Folder Include="ToDoTask\Update\" />
+  </ItemGroup>
+
+</Project>

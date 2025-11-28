@@ -1,0 +1,11 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="ToDo-backend.Application/ToDo-backend.Application.csproj" />
+    <Project Path="ToDo-backend.Domain/ToDo-backend.Domain.csproj" />
+    <Project Path="ToDo-backend.Infrastructure/ToDo-backend.Infrastructure.csproj" />
+    <Project Path="ToDo-backend.Web.API/ToDo-backend.Web.API.csproj" Id="693ab48c-c3ee-417f-b9f4-dd357ecba69d" />
+  </Folder>
+  <Project Path="docker-compose.dcproj">
+    <Build />
+  </Project>
+</Solution>

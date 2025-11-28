@@ -1,0 +1,31 @@
+services:
+  todo-backend.web.api:
+    image: ${DOCKER_REGISTRY-}todobackendwebapi
+    build:
+      context: .
+      dockerfile: ToDo-backend.Web.API/Dockerfile
+    depends_on: 
+         - todo-db
+    ports:
+      - "${API_HTTP_PORT}:8080"
+      - "${API_HTTPS_PORT}:8081"
+    environment:
+      - ASPNETCORE_HTTPS_PORT=${API_HTTPS_PORT}
+      - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+    restart: on-failure
+
+  todo-db:
+    image: postgres:17
+    container_name: ${PROJECT_NAME}.Db
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - KEYCLOAK_DB=${KEYCLOAK_DB}
+      - KEYCLOAK_DB_USER=${KEYCLOAK_DB_USER}
+      - KEYCLOAK_DB_PASSWORD=${KEYCLOAK_DB_PASSWORD}
+    volumes:
+      - ./.containers/database:/var/lib/postgresql/data
+      - ./.containers/database-init:/docker-entrypoint-initdb.d
+    ports:
+      - "${POSTGRES_PORT}:5432"
