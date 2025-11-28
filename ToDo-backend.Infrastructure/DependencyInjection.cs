@@ -20,7 +20,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 #endregion
-
+ 
 public static class DependencyInjection
 {
     #region Constants
